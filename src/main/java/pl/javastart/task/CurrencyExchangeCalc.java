@@ -39,10 +39,7 @@ public class CurrencyExchangeCalc {
             BigDecimal exchange = value.getPrice().divide(currency.getRate(), RoundingMode.UP);
             if (exchange.compareTo(theMostExpensive) > 0) {
                 theMostExpensive = exchange;
-                String name = value.getName();
-                BigDecimal price = value.getPrice();
-                String currency1 = value.getCurrency();
-                product = new Product(name, price, currency1);
+                product = value;
             }
         }
         return product;
@@ -56,10 +53,7 @@ public class CurrencyExchangeCalc {
             BigDecimal exchange = value.getPrice().divide(currency.getRate(), RoundingMode.UP);
             if (exchange.compareTo(theCheapestOne) < 0) {
                 theCheapestOne = exchange;
-                String name = value.getName();
-                BigDecimal price = value.getPrice();
-                String currency1 = value.getCurrency();
-                product = new Product(name, price, currency1);
+                product = value;
             }
         }
         return product;
