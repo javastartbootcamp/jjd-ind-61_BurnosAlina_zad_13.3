@@ -5,10 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductAndCurrencyReader {
-    ArrayList<Product> readProductFile(String fileName) throws IOException {
-        ArrayList<Product> productList = new ArrayList<>();
+    List<Product> readProductFile(String fileName) throws IOException {
+        List<Product> productList = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
         String line;
         while ((line = reader.readLine()) != null) {
@@ -21,8 +22,8 @@ public class ProductAndCurrencyReader {
         return productList;
     }
 
-    ArrayList<Currency> readCurrenciesFile(String fileName) throws IOException {
-        ArrayList<Currency> currencyList = new ArrayList<>();
+    List<Currency> readCurrenciesFile(String fileName) throws IOException {
+        List<Currency> currencyList = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
         String line;
         while ((line = reader.readLine()) != null) {

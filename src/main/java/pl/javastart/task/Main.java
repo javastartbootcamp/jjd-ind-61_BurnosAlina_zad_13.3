@@ -2,7 +2,7 @@ package pl.javastart.task;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -12,8 +12,8 @@ public class Main {
         ProductAndCurrencyReader reader = new ProductAndCurrencyReader();
         CurrencyExchangeCalc calc = new CurrencyExchangeCalc();
         try {
-            ArrayList<Product> products = reader.readProductFile(fileName2);
-            ArrayList<Currency> currencies = reader.readCurrenciesFile(fileName1);
+            List<Product> products = reader.readProductFile(fileName2);
+            List<Currency> currencies = reader.readCurrenciesFile(fileName1);
             BigDecimal sumPricesInEuro = calc.sumAllPricesInEuro(products, currencies);
             System.out.println("Suma cen wszystkich produktów w EURO: " + sumPricesInEuro);
             BigDecimal avgPriceInEuro = calc.calAvgPriceInEuro(sumPricesInEuro, products.size());
